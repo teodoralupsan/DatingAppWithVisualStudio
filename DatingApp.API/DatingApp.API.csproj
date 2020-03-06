@@ -8,6 +8,8 @@
   <ItemGroup>
     <Compile Remove="Migrations\20200306091215_ExtendedUserClass.cs" />
     <Compile Remove="Migrations\20200306091215_ExtendedUserClass.Designer.cs" />
+    <Compile Remove="Migrations\20200306092610_ExtendedUserClass.cs" />
+    <Compile Remove="Migrations\20200306092610_ExtendedUserClass.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>
