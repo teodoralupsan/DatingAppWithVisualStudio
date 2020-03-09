@@ -17,6 +17,11 @@ import { MemberListComponent } from './members/member-list/member-list.component
 import { MessagesComponent } from './messages/messages.component';
 import { appRoutes } from './routes';
 import { MemberCardComponent } from './members/member-card/member-card.component';
+import { JwtModule } from '@auth0/angular-jwt';
+
+export function tokenGetter() {
+   return localStorage.getItem('token');
+}
 
 @NgModule({
    declarations: [
@@ -35,7 +40,14 @@ import { MemberCardComponent } from './members/member-card/member-card.component
       FormsModule,
       BrowserAnimationsModule,
       BsDropdownModule.forRoot(),
-      RouterModule.forRoot(appRoutes)
+      RouterModule.forRoot(appRoutes),
+      JwtModule.forRoot({
+         config: { // all the requests will have as header the token provided except for the blacklistedRoutes
+            tokenGetter,
+            whitelistedDomains: ['localhost:60671'],
+            blacklistedRoutes: ['localhost:60671/api/auth'] // for this route the token is not sent
+         }
+      })
    ],
    providers: [
       AuthService,
