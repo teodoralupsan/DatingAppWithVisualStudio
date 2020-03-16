@@ -23,6 +23,9 @@ import { MemberDetailResolver } from './_resolvers/member-detail.resolver';
 import { MemberListResolver } from './_resolvers/member-list.resolver';
 import { MemberEditComponent } from './members/member-edit/member-edit.component';
 import { MemberEditResolver } from './_resolvers/member-edit.resolver';
+import { AlertifyService } from './_services/alertify.service';
+import { UserService } from './_services/user.service';
+import { PreventUnsavedChanges } from './_guards/prevent-unsaved-changes.guard';
 
 
 export function tokenGetter() {
@@ -61,10 +64,13 @@ export function tokenGetter() {
    ],
    providers: [
       AuthService,
+      AlertifyService,
+      UserService,
       ErrorInterceptorProvider,
       MemberListResolver,
       MemberDetailResolver,
-      MemberEditResolver
+      MemberEditResolver,
+      PreventUnsavedChanges
    ],
    bootstrap: [
       AppComponent
