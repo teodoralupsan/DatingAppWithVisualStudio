@@ -12,7 +12,6 @@ namespace DatingApp.API
     {
         public static void Main(string[] args)
         {
-            Console.WriteLine("test");
             var host = CreateWebHostBuilder(args).Build();
             using (var scope = host.Services.CreateScope())
             {
