@@ -125,13 +125,16 @@ namespace DatingApp.API.Data
             switch(messageParams.MessageContainer)
             {
                 case "Inbox":
-                    messages = messages.Where(m => m.RecipientId == messageParams.UserId);
+                    messages = messages.Where(u => u.RecipientId == messageParams.UserId
+                        && u.RecipientDeleted == false);
                     break;
                 case "Outbox":
-                    messages = messages.Where(m => m.SenderId == messageParams.UserId);
+                    messages = messages.Where(u => u.SenderId == messageParams.UserId
+                        && u.SenderDeleted == false);
                     break;
                 default:
-                    messages = messages.Where(m => m.RecipientId == messageParams.UserId && !m.IsRead);
+                    messages = messages.Where(u => u.RecipientId == messageParams.UserId
+                        && !u.IsRead && u.RecipientDeleted == false);
                     break;
             }
             messages = messages.OrderByDescending(d => d.MessageSent);
