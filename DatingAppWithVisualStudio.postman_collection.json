@@ -1,0 +1,635 @@
+{
+	"info": {
+		"_postman_id": "e43ce694-40d0-4a5e-9a37-14e90bb83006",
+		"name": "DatingAppWithVisualStudio",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GetValues",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJuYW1laWQiOiIzIiwidW5pcXVlX25hbWUiOiJ0ZW8iLCJuYmYiOjE1ODMyMjc0NzAsImV4cCI6MTU4MzMxMzg3MCwiaWF0IjoxNTgzMjI3NDcwfQ.1CfVswD-0VkUE9DJp0CvzvC9ysu-X7JCCGZfj-OHqPcjJt-vVH2Kow7gnBIjwhmrpj2wfy_FHV7UfKH3iJRuuQ",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:60671/api/values",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "60671",
+					"path": [
+						"api",
+						"values"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetValueById",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:60671/api/values/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "60671",
+					"path": [
+						"api",
+						"values",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetUsersWithPagination",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJuYW1laWQiOiIzIiwidW5pcXVlX25hbWUiOiJ3ZW5kaSIsIm5iZiI6MTU4NTE0NTQ0OCwiZXhwIjoxNTg1MjMxODQ4LCJpYXQiOjE1ODUxNDU0NDh9.GK9CKm6Pwjng6Bf-mWEEsyHFP3AUxdJNVqRJ_nzp8KV2SNwu7wKEFA6RkaTOCEj6j1uoCxvDL7v9MoGrGyQILg",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:60671/api/users?pageNumber=2&pageSize=3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "60671",
+					"path": [
+						"api",
+						"users"
+					],
+					"query": [
+						{
+							"key": "pageNumber",
+							"value": "2"
+						},
+						{
+							"key": "pageSize",
+							"value": "3"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "GetUsers",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJuYW1laWQiOiIzIiwidW5pcXVlX25hbWUiOiJ3ZW5kaSIsIm5iZiI6MTU4MzQ5ODA2MywiZXhwIjoxNTgzNTg0NDYzLCJpYXQiOjE1ODM0OTgwNjN9._xVjqPGoz3ZoujtcB1hRUv04Vu0fmaX_RVW3-HjgPiVWOlwKyBYGj1P1dOP1pdEYcgdAnHh41u3SbyDBz1ViGQ",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:60671/api/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "60671",
+							"path": [
+								"api",
+								"users"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Server",
+							"value": "Microsoft-IIS/10.0"
+						},
+						{
+							"key": "X-SourceFiles",
+							"value": "=?UTF-8?B?QzpcUGVyc29uYWwgVHV0b3JpYWxzXERhdGluZ0FwcFdpdGhWaXN1YWxTdHVkaW9cRGF0aW5nQXBwLkFQSVxhcGlcdXNlcnM=?="
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "ASP.NET"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 06 Mar 2020 12:47:09 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "[{\"id\":1,\"username\":\"melody\",\"passwordHash\":\"we7Jap7YWaT6ZlXDC92x0MnNNub0B1cOAqmIKUNpoZ7aNnQqgM8mq6qby8rLu2smONC3XHkYAkePUJNiQNNSjg==\",\"passwordSalt\":\"lFiyhIAW+ysQVoH5bznRIcXWGjdpJYH3EMWU0H12CdU5UdBLG3zkqiryXSLHADgMIQ3qeRoW9hL3YZ/qNFlgRh/3ojTXcAemRhr5ISZ4qUETPnGbQ3oyBacVoooluUbJV8pk1Afw7+HnmdTEAqJ1LqmJJZpc1zjtKkZs8tvtZGM=\",\"gender\":\"female\",\"dateOfBirth\":\"1963-07-20T00:00:00\",\"knownAs\":\"Melody\",\"created\":\"2020-01-30T00:00:00\",\"lastActive\":\"2020-01-30T00:00:00\",\"introduction\":\"Culpa Lorem qui Lorem dolor cupidatat commodo est Lorem ut nisi culpa ipsum ut. Sit cupidatat ex sit reprehenderit. Pariatur anim voluptate voluptate elit in sit ipsum exercitation ut aliquip mollit non. Proident laboris duis et proident est ullamco labore anim dolore. Et ut eiusmod cupidatat consectetur veniam esse dolor velit id mollit consequat incididunt fugiat. Irure laborum sit dolore sint labore sit do ullamco duis aliqua sint. Excepteur id quis aliqua laboris aliquip nostrud excepteur.\\r\\n\",\"lookingFor\":\"Eu eiusmod ad mollit commodo. Minim enim ipsum aliquip officia irure do est et sint Lorem irure consectetur est. Veniam reprehenderit voluptate eiusmod nisi do qui irure exercitation irure cillum laborum adipisicing.\\r\\n\",\"interests\":\"Minim minim deserunt sunt aute qui minim laborum qui officia. Et enim mollit pariatur do anim incididunt voluptate commodo velit Lorem enim culpa officia. Qui et elit et ex eiusmod esse tempor laborum nostrud ipsum. Qui minim qui tempor amet aliqua qui officia duis. Labore duis duis mollit quis in aliqua commodo eiusmod quis ex fugiat. Cillum velit ex ipsum culpa aliqua ullamco magna sunt duis consequat fugiat ut reprehenderit.\\r\\n\",\"city\":\"Tyhee\",\"country\":\"Togo\",\"photos\":[{\"id\":1,\"url\":\"https://randomuser.me/api/portraits/women/3.jpg\",\"description\":\"Eiusmod commodo id aute fugiat.\",\"dateAdded\":\"0001-01-01T00:00:00\",\"isMain\":true"
+				}
+			]
+		},
+		{
+			"name": "GetUserById",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJuYW1laWQiOiIzIiwidW5pcXVlX25hbWUiOiJ3ZW5kaSIsIm5iZiI6MTU4MzUwMTA2OSwiZXhwIjoxNTgzNTg3NDY5LCJpYXQiOjE1ODM1MDEwNjl9.3TcgaPEF-geFKXVL5QGXUnzUN7HKQy_S-wEyEYGL0v-FkS3B25mgcCOlc2yzRi3Od8JzoN94YMLrz5_o_ajSNQ",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:60671/api/users/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "60671",
+					"path": [
+						"api",
+						"users",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Register",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"gender\": \"male\",\n\t\"username\": \"Bob\",\n\t\"knownAs\": \"Bobby\",\n\t\"dateOfBirth\": \"10/21/1985\",\n\t\"city\": \"London\",\n\t\"country\": \"UK\",\n\t\"password\": \"password\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:60671/api/auth/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "60671",
+					"path": [
+						"api",
+						"auth",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"username\": \"Melody\",\n\t\"password\": \"password\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:60671/api/auth/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "60671",
+					"path": [
+						"api",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UpdateUser",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJuYW1laWQiOiIzIiwidW5pcXVlX25hbWUiOiJ3ZW5kaSIsIm5iZiI6MTU4NDM2ODA5MywiZXhwIjoxNTg0NDU0NDkzLCJpYXQiOjE1ODQzNjgwOTN9.6IuKqfHGpSwHo-XMJGkcVzkaODbr7cAAQlDyGJX9d2fa1WPT3sgNvoxh83Vg7uOZ_fYadyqe576ZEaQcGkbP6w",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"introduction\": \"test\",\n\t\"lookingFor\": \"test\",\n\t\"interests\": \"test\",\n\t\"city\": \"test\",\n\t\"country\": \"test\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:60671/api/users/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "60671",
+					"path": [
+						"api",
+						"users",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UploadPhoto",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJuYW1laWQiOiIzIiwidW5pcXVlX25hbWUiOiJ3ZW5kaSIsIm5iZiI6MTU4NDUzNjk3NSwiZXhwIjoxNTg0NjIzMzc1LCJpYXQiOjE1ODQ1MzY5NzV9.j8NPNSzdYPHaOsYJRKUi3XaNHoP1Sh6KqpuVweJDpM45YZmTMykDyeQv2ARYKCZKD3QXRrLpGnahePbNgUz_3A"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "File",
+							"type": "file",
+							"src": "/C:/Personal Tutorials/DatingApp/Photo Samples/s-1.jpg"
+						}
+					],
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:60671/api/users/3/photos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "60671",
+					"path": [
+						"api",
+						"users",
+						"3",
+						"photos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "SetMainPhoto",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer "
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:60671/api/users/?/photos/?/setMain",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "60671",
+					"path": [
+						"api",
+						"users",
+						""
+					],
+					"query": [
+						{
+							"key": "/photos/?/setMain",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeletePhoto",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJuYW1laWQiOiIzIiwidW5pcXVlX25hbWUiOiJ3ZW5kaSIsIm5iZiI6MTU4NDcyNDQ0NywiZXhwIjoxNTg0ODEwODQ3LCJpYXQiOjE1ODQ3MjQ0NDd9.U6Sg2y6MmbEGIVpgVdpA0JRf0NvkTmswHXrbp-bZvcgflI_fHlxGrtPOBVDmaWiNPoCQgj_jXO-fTHHyI8WZ8Q"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:60671/api/users/3/photos/16",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "60671",
+					"path": [
+						"api",
+						"users",
+						"3",
+						"photos",
+						"16"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "LikeSomebody",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJuYW1laWQiOiIzIiwidW5pcXVlX25hbWUiOiJ3ZW5kaSIsIm5iZiI6MTU4NTIzOTYwOCwiZXhwIjoxNTg1MzI2MDA4LCJpYXQiOjE1ODUyMzk2MDh9.BZVisBsGOKWOs9waNzG3jZLdEH_AJ2Z_LQNGD8H8DLK_bpDkWyWNtUU9Z9VapcPMsEOqT10mCXCpWN9UWibn8Q"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:60671/api/users/3/like/18",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "60671",
+					"path": [
+						"api",
+						"users",
+						"3",
+						"like",
+						"18"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetLikees/Likers",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJuYW1laWQiOiIzIiwidW5pcXVlX25hbWUiOiJ3ZW5kaSIsIm5iZiI6MTU4NTIzOTYwOCwiZXhwIjoxNTg1MzI2MDA4LCJpYXQiOjE1ODUyMzk2MDh9.BZVisBsGOKWOs9waNzG3jZLdEH_AJ2Z_LQNGD8H8DLK_bpDkWyWNtUU9Z9VapcPMsEOqT10mCXCpWN9UWibn8Q"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:60671/api/users/3/like/18",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "60671",
+					"path": [
+						"api",
+						"users",
+						"3",
+						"like",
+						"18"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CreateMessage",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJuYW1laWQiOiIxMSIsInVuaXF1ZV9uYW1lIjoibWFyayIsIm5iZiI6MTU4NTU3MDkyMywiZXhwIjoxNTg1NjU3MzIzLCJpYXQiOjE1ODU1NzA5MjN9.ZQlzHNoftOCLUpW_QmqxBufHFSg2zCLW4fGuzD3yWLhFJf544BY5Dgnd7WCb_OUF_D_10P8KCrGh7FMcwbh6fg"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"recipientId\": \"1\",\n\t\"content\": \"Test message from Mark to Melody\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:60671/api/users/11/messages",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "60671",
+					"path": [
+						"api",
+						"users",
+						"11",
+						"messages"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetMessagesForUser",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJuYW1laWQiOiIxIiwidW5pcXVlX25hbWUiOiJtZWxvZHkiLCJuYmYiOjE1ODU1NzEwNTEsImV4cCI6MTU4NTY1NzQ1MSwiaWF0IjoxNTg1NTcxMDUxfQ.i7dg5daNfCkZ31jgxocG8z0MQE93ZbPUxPQw7-uN-dAijjr2135HbSyDMvFJIqGlvssd4ThQwoJZmlowWeVhrw"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:60671/api/users/1/messages?messageContainer=Outbox",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "60671",
+					"path": [
+						"api",
+						"users",
+						"1",
+						"messages"
+					],
+					"query": [
+						{
+							"key": "messageContainer",
+							"value": "Outbox"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetMessageThread",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJuYW1laWQiOiIxIiwidW5pcXVlX25hbWUiOiJtZWxvZHkiLCJuYmYiOjE1ODU1NzEwNTEsImV4cCI6MTU4NTY1NzQ1MSwiaWF0IjoxNTg1NTcxMDUxfQ.i7dg5daNfCkZ31jgxocG8z0MQE93ZbPUxPQw7-uN-dAijjr2135HbSyDMvFJIqGlvssd4ThQwoJZmlowWeVhrw"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:60671/api/users/1/messages/thread/11",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "60671",
+					"path": [
+						"api",
+						"users",
+						"1",
+						"messages",
+						"thread",
+						"11"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
